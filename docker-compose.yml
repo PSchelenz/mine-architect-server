@@ -1,0 +1,46 @@
+version: '3'
+services:
+    mas_laravel:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: mas_laravel
+        restart: unless-stopped
+        network_mode: "host"
+        volumes:
+            - ./:/var/www/html
+        depends_on:
+            - mas_db
+        ports:
+            - "8000:8000"
+
+    mas_vite:
+        container_name: mas_vite
+        network_mode: "host"
+        build:
+            context: .
+            dockerfile: Dockerfile-vite
+        volumes:
+            - ./:/app
+            - /app/node_modules
+        ports:
+            - "5201:5201"
+
+    mas_db:
+        image: mysql:8.4
+        container_name: mas_db
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: "${DB_DATABASE}"
+            MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+            MYSQL_PASSWORD: "${DB_PASSWORD}"
+            MYSQL_USER: "${DB_USERNAME}"
+        volumes:
+            - my-db:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        expose:
+            - "3306"
+
+volumes:
+    my-db:
