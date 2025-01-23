@@ -24,7 +24,7 @@ export default defineConfig(({ command, mode }) => {
       vue(),
       vueJsx(),
       laravel({
-        input: ['resources/css/app.css', 'resources/js/app.js'],
+        input: ['resources/css/app.css', 'resources/js/app.ts'],
         refresh: true,
       }),
       i18n()
@@ -32,6 +32,10 @@ export default defineConfig(({ command, mode }) => {
     resolve: {
       alias: {
         '@': resolve(__dirname, 'resources/js'),
+        '@composables': resolve(__dirname, 'resources/js/composables'),
+        '@router': resolve(__dirname, 'resources/js/router'),
+        '@store': resolve(__dirname, 'resources/js/store'),
+        '@views': resolve(__dirname, 'resources/js/views'),
         vue: 'vue/dist/vue.esm-bundler.js',
       }
     },
@@ -41,7 +45,7 @@ export default defineConfig(({ command, mode }) => {
       emptyOutDir: true,
       outDir: './public/build',
       rollupOptions: {
-        input: resolve(__dirname, 'resources/js/app.js'),
+        input: resolve(__dirname, 'resources/js/app.ts'),
       },
     },
   };
