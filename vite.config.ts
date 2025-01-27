@@ -32,10 +32,12 @@ export default defineConfig(({ command, mode }) => {
     resolve: {
       alias: {
         '@': resolve(__dirname, 'resources/js'),
+        '@components': resolve(__dirname, 'resources/js/views/components'),
         '@composables': resolve(__dirname, 'resources/js/composables'),
         '@router': resolve(__dirname, 'resources/js/router'),
         '@store': resolve(__dirname, 'resources/js/store'),
         '@views': resolve(__dirname, 'resources/js/views'),
+        '@styles': resolve(__dirname, 'resources/scss'),
         vue: 'vue/dist/vue.esm-bundler.js',
       }
     },

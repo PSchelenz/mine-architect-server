@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import ButtonCreeper from '@components/buttons/ButtonCreeper.vue';
 
 const displayCards = ref({
   list: false,
@@ -25,7 +26,7 @@ const displayCards = ref({
         >
           <router-link to="/">
             List
-            <FontAwesomeIcon :icon="faChevronDown" size="sm" />
+            <FontAwesomeIcon :icon="faChevronDown" size="xs" />
           </router-link>
 
           <Transition name="fade-to-top">
@@ -39,7 +40,7 @@ const displayCards = ref({
     </nav>
 
     <div class="nav-buttons">
-      <button class="btn btn-primary"><span>Sign In</span></button>
+      <ButtonCreeper text="Sign In" />
     </div>
   </div>
 </template>

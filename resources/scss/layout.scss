@@ -1,0 +1,75 @@
+@import 'fonts';
+@import 'variables';
+
+body {
+    margin: 0;
+    position: relative;
+    font-family: $font-andika;
+    color: $text-primary;
+}
+
+header {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 10px 40px rgba(202, 202, 202, 0.2);
+}
+
+main {
+    margin-top: $navbar-height;
+}
+
+a {
+    text-decoration: none;
+    color: $text-primary;
+    transition: color .2s ease;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 42px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 36px;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 26px;
+}
+
+.page-header {
+    width: 100%;
+    padding: 64px;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $gray-200;
+    box-sizing: border-box;
+
+    h2 {
+        margin: 0;
+    }
+}

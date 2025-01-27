@@ -4,15 +4,19 @@ import {
   isNavigationFailure,
 } from "vue-router";
 
-import App from '@/App.vue';
+import Home from "@/views/Home/Home.vue";
+import categoryRoutes from "@router/routes/category";
+import creationRoutes from "@router/routes/creation";
 
 const routes = [
+  ...categoryRoutes,
+  ...creationRoutes,
   {
     path: "/",
     name: "/",
-    component: App,
+    component: Home,
     meta: {
-      title: "App",
+      title: "Home",
     },
   },
 ];

@@ -1,0 +1,11 @@
+{
+    "name": "Creation",
+    "alias": "creation",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Creation\\Providers\\CreationServiceProvider"
+    ],
+    "files": []
+}
