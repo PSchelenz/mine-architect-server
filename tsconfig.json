@@ -4,7 +4,7 @@
     "resources/**/*.ts",
     "resources/**/*.tsx",
     "resources/**/*.d.ts",
-    "resources/**/*.vue",
+    "resources/**/*.vue", "resources/js/composables/useForm.js",
   ],
   "exclude": [
     "node_modules",
@@ -16,7 +16,13 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "paths": {
-      "@/*": ["resources/js/*"]
+      "@/*": ["resources/js/*"],
+      "@components/*": ["resources/js/views/components/*"],
+      "@composables/*": ["resources/js/composables/*"],
+      "@router/*": ["resources/js/router/*"],
+      "@store/*": ["resources/js/store/*"],
+      "@views/*": ["resources/js/views/*"],
+      "@styles/*": ["resources/scss/*"]
     },
     "types": ["vite/client"],
   },

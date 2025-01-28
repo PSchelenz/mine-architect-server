@@ -13,7 +13,7 @@ const routes = [
   ...creationRoutes,
   {
     path: "/",
-    name: "/",
+    name: "home",
     component: Home,
     meta: {
       title: "Home",

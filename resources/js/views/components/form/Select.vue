@@ -15,11 +15,13 @@ interface SelectProps {
   placeholder?: string;
   options?: Option[];
   modelValue: string | number | null;
+  withSearch?: boolean;
 }
 
 const props = withDefaults(defineProps<SelectProps>(), {
   placeholder: 'Select an option',
   modelValue: null,
+  withSearch: false,
 });
 
 const emit = defineEmits<{
@@ -84,7 +86,7 @@ onUnmounted(() => {
       </div>
       <Transition name="fade-to-top">
         <div class="select-dropdown" v-show="isOpen">
-          <div class="select-search form-field">
+          <div v-if="withSearch" class="select-search form-field">
             <input
               type="text"
               v-model="searchQuery"

@@ -1,3 +1,113 @@
+@import '../../variables';
+
 .creations {
-    
+    display: flex;
+    gap: 24px;
+
+    .sidebar {
+        width: 30%;
+        padding: 26px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(202, 202, 202, 0.2);
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid $gray-200;
+
+            svg {
+                color: $primary;
+            }
+
+            h4 {
+                margin-left: 16px;
+                margin-block: 0px;
+            }
+        }
+
+        .subsection {
+            .subsection-title {
+                margin-bottom: 4px;
+            }
+
+            .form-field {
+                width: 100%;
+            }
+
+            .slider-container {
+                margin-top: 48px;
+            }
+        }
+    }
+
+    .creations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+        gap: 24px;
+
+        .creation-card {
+            background-color: #fff;
+            border: 1px solid $gray-200;
+
+            .card-image {
+                width: 100%;
+                height: 300px;
+                background-color: $gray-200;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .card-info {
+                padding: 24px;
+                position: relative;
+
+                .creator-image {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background-color: $gray-300;
+                    position: absolute;
+                    left: 24px;
+                    transform: translateY(-50%);
+                }
+
+                .top-info {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 24px;
+                    color: $gray-400;
+                    font-size: 12px;
+                }
+
+                h5.title {
+                    margin-block: 16px;
+                }
+
+                .bottom-info {
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    .main-info {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        color: $gray-400;
+                        font-size: 18px;
+                    }
+
+                    .score {
+                        background-color: $dirt;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }

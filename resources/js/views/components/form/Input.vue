@@ -1,13 +1,4 @@
 <script lang="ts" setup>
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon as I } from '@fortawesome/vue-fontawesome';
-import { computed, onMounted, onUnmounted, ref } from 'vue';
-
-interface Option {
-  value: string;
-  label: string;
-}
-
 interface SelectProps {
   id?: string;
   name: string;
@@ -50,6 +41,6 @@ const emit = defineEmits<{
       @input="emit('update:modelValue', ($event.target as HTMLInputElement)?.value)"
     />
 
-    <p class="input-error"></p>
+    <p v-if="error" class="input-error">{{ error }}</p>
   </div>
 </template>
